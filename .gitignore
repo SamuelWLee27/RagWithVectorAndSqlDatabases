@@ -1,1 +1,16 @@
 .idea
+
+# uv virtual environment
+.venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Build artifacts (from installing your project as a package)
+dist/
+build/
+*.egg-info/
+
+# Environment variables / secrets
+.env
