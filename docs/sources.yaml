@@ -1,0 +1,42 @@
+# Documents to load into Weaviate. The files themselves are copyrighted by their
+# manufacturers and are not committed; run scripts/download_docs.py to fetch them.
+#
+# Fields:
+#   id        unique, used as the file name in docs/raw/
+#   product   must match products.name in the SQL database exactly
+#   brand     manufacturer
+#   doc_type  owners_manual / dealer_manual / spec_sheet / warranty / guide
+#   url       direct link to the official file (PDF or HTML page)
+
+- id: shimano-deore-rear-derailleur-dm
+  product: "Shimano Deore RD-M6100"
+  brand: Shimano
+  doc_type: dealer_manual
+  url: https://si.shimano.com/en/pdfs/dm/MARD001/DM-MARD001-04-ENG.pdf
+
+- id: shimano-cues-rear-derailleur-dm
+  product: "Shimano CUES RD-U6000"
+  brand: Shimano
+  doc_type: dealer_manual
+  url: https://si.shimano.com/en/pdfs/dm/LARD002/DM-LARD002-05-ENG.pdf
+
+- id: shimano-cues-shifter-dm
+  product: "Shimano CUES SL-U6000"
+  brand: Shimano
+  doc_type: dealer_manual
+  url: https://si.shimano.com/en/pdfs/dm/LASL001/DM-LASL001-03-ENG.pdf
+
+- id: trek-torque-guide
+  product: null            # general doc, not tied to one product
+  brand: Trek
+  doc_type: guide
+  url: https://www.trekbikes.com/owners-manual/torque/
+
+# Add your bikes here. Copy the PDF link from the model's entry on Trek's
+# manuals page (https://www.trekbikes.com/ie/en_IE/manuals/), e.g.:
+#
+# - id: trek-marlin-owners-manual
+#   product: "Trek Marlin 7"
+#   brand: Trek
+#   doc_type: owners_manual
+#   url: <paste the PDF link here>
