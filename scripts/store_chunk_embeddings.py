@@ -11,12 +11,11 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_ollama import OllamaEmbeddings
 from langchain_weaviate import WeaviateVectorStore
+from config import COLLECTION, EMBED_MODEL
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ROOT / "docs" / "sources.yaml"
 RAW_DIR = ROOT / "docs" / "raw"
-COLLECTION = "ProductDocs"
-EMBED_MODEL = "nomic-embed-text"
 
 # Load docs
 
