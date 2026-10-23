@@ -110,13 +110,14 @@ def mixed_chunking(source_text):
 
 def store_chunks(chunks: list[Document]) -> None:
     client = weaviate.connect_to_local()
+    embeddings = OllamaEmbeddings(model=EMBED_MODEL)
     try:
         if client.collections.exists(COLLECTION):
             client.collections.delete(COLLECTION)
 
         WeaviateVectorStore.from_documents(
             chunks,
-            OllamaEmbeddings(model=EMBED_MODEL),
+            embeddings,
             client=client,
             index_name=COLLECTION,
             text_key="text",
@@ -125,6 +126,7 @@ def store_chunks(chunks: list[Document]) -> None:
         print(f"Stored {count} chunks in '{COLLECTION}'")
     finally:
         client.close()
+        embeddings._client.close()
 
 
 def main() -> None:
